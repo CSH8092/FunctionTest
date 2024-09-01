@@ -1,0 +1,28 @@
+{
+  "Data": [
+    {
+      "key": "Button_1",
+      "text": "ログインボタン"
+    },
+    {
+      "key": "Button_2",
+      "text": "ログアウトボタン"
+    },
+    {
+      "key": "Button_3",
+      "text": "はいボタン"
+    },
+    {
+      "key": "Button_4",
+      "text": "ボタンなし"
+    },
+    {
+      "key": "Button_5",
+      "text": "OKボタン"
+    },
+    {
+      "key": "Button_6",
+      "text": "キャンセルボタン"
+    }
+  ]
+}
