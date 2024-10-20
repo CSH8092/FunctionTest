@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraCom : MonoBehaviour
 {
     // Components
+    public GameObject object_gizmoCam;
     public GameObject object_target;
     GameObject obejct_pivot = null;
 
@@ -41,6 +42,8 @@ public class CameraCom : MonoBehaviour
         objectOriginPosition = object_target.transform.position;
         screenUpperRightPoint = new Vector3(Screen.width, Screen.height);
 
+        object_gizmoCam.SetActive(true);
+
         SetPanSpeed();
     }
 
@@ -49,8 +52,8 @@ public class CameraCom : MonoBehaviour
         GetMouseEvent();
 
         CameraRotate();
-        //CameraPerfectPan();
-        CameraPan();
+        CameraPerfectPan();
+        //CameraPan();
         CameraZoom();
     }
 
