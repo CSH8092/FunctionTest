@@ -42,7 +42,10 @@ public class CameraCom : MonoBehaviour
         objectOriginPosition = object_target.transform.position;
         screenUpperRightPoint = new Vector3(Screen.width, Screen.height);
 
-        object_gizmoCam.SetActive(true);
+        if (object_gizmoCam != null)
+        {
+            object_gizmoCam.SetActive(true);
+        }
 
         SetPanSpeed();
     }
@@ -103,8 +106,11 @@ public class CameraCom : MonoBehaviour
             // y축 회전
             transform_camera.RotateAround(pivotPoint, transform_camera.up, mouse_horizontal * rotateSpeed);
 
-            Matrix4x4 camMtx = transform_camera.localToWorldMatrix.inverse;
-            transform_gizmo.localRotation = camMtx.rotation;
+            if (transform_gizmo != null)
+            {
+                Matrix4x4 camMtx = transform_camera.localToWorldMatrix.inverse;
+                transform_gizmo.localRotation = camMtx.rotation;
+            }
         }
         else if (Input.GetMouseButtonUp(1))
         {
@@ -120,11 +126,9 @@ public class CameraCom : MonoBehaviour
 
     void CameraPerfectPan()
     {
-        // Perpect Panning : https://prideout.net/blog/perfect_panning/
-
         if (Input.GetMouseButtonDown(2))
         {
-            // 충돌 판정이 됬을 때만 해당 -> map 같은 오브젝트 옮길 때 유용할듯?
+            // 충돌 판정이 됬을 때만 해당
             a = transform_camera.position;
             ray = camera_this.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
@@ -137,9 +141,6 @@ public class CameraCom : MonoBehaviour
 
                 e = ray.origin + ray.direction * camera_this.farClipPlane;
             }
-
-            //Debug.DrawLine(a, c, Color.red, 1000000);
-            //Debug.DrawLine(c, e, Color.magenta, 1000000);
         }
         else if (Input.GetMouseButton(2) && isPan)
         {
@@ -160,9 +161,6 @@ public class CameraCom : MonoBehaviour
         else if (Input.GetMouseButtonUp(2))
         {
             isPan = false;
-
-            //Debug.DrawLine(b, d, Color.yellow, 1000000);
-            //Debug.DrawLine(c, d, Color.blue, 1000000);
         }
     }
 
