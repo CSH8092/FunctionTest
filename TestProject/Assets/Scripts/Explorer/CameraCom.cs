@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CameraCom : MonoBehaviour
 {
+    readonly float MAX_DISTANCE = 1000f;
+
     [Header("Camera")]
     [SerializeField] Camera camera_main;
     [SerializeField] Transform transform_mainCamera;
@@ -63,12 +65,21 @@ public class CameraCom : MonoBehaviour
     {
         // 화면 Center Point 계산
         Vector3 screenCenter = camera_main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
-        Vector3 worldCenter = camera_main.ScreenToWorldPoint(screenCenter);
-
+        Vector3 rotatePivot = camera_main.ScreenToWorldPoint(screenCenter);
         Vector3 dir = object_target.transform.position - transform_mainCamera.position;
-        worldCenter += transform_mainCamera.forward * dir.magnitude;
+        rotatePivot += transform_mainCamera.forward * dir.magnitude;
 
-        return worldCenter;
+        // hit Point Check
+        ray = camera_main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+        if (Physics.Raycast(ray, out hit, MAX_DISTANCE))
+        {
+            if (hit.transform.gameObject.layer == 7)
+            {
+                rotatePivot = hit.point;
+            }
+        }
+
+        return rotatePivot;
     }
 
     [Header("Rotate Option")]
@@ -128,7 +139,7 @@ public class CameraCom : MonoBehaviour
             // 충돌 판정이 됬을 때만 해당
             a = transform_mainCamera.position;
             ray = camera_main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, MAX_DISTANCE))
             {
                 if (hit.transform.gameObject.layer == 7) // Layer 7 : Model
                 {
