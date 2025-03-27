@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &291314119
 Camera:
   m_ObjectHideFlags: 0
@@ -693,7 +693,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950953653}
-  - component: {fileID: 950953654}
   - component: {fileID: 950953655}
   - component: {fileID: 950953656}
   m_Layer: 0
@@ -712,30 +711,13 @@ Transform:
   m_GameObject: {fileID: 950953652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: -10}
+  m_LocalPosition: {x: 0, y: 1.7, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1967776437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &950953654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950953652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d351aa3ac590f4b43bbc2b01c6b2d457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  object_gizmoCam: {fileID: 291314117}
-  object_target: {fileID: 320180758}
-  transform_gizmo: {fileID: 1383769463}
-  xPanSpeed: 10
-  yPanSpeed: 10
 --- !u!20 &950953655
 Camera:
   m_ObjectHideFlags: 0
@@ -769,7 +751,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 25
   orthographic: 0
   orthographic size: 8
   m_Depth: 0
@@ -837,6 +819,112 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: d9a1483b77bf10e4e851678ab6c2e54e, type: 3}
+--- !u!1 &974101151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974101155}
+  - component: {fileID: 974101154}
+  - component: {fileID: 974101153}
+  - component: {fileID: 974101152}
+  m_Layer: 0
+  m_Name: Object_Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!135 &974101152
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974101151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &974101153
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974101151}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b0eea425418757242835e29ee5fedd9e, type: 2}
+  - {fileID: 2100000, guid: c3cd944d92f0c8e4eb97814256e3c9df, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &974101154
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974101151}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &974101155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974101151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1013773749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1380,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2016361480}
-  - component: {fileID: 2016361479}
+  - component: {fileID: 2016361481}
+  - component: {fileID: 2016361482}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1300,59 +1389,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2016361479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016361478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdcf2ee055cdcd419250eed25c8d330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  styles:
-  - targetName: Camera_
-    textColor: {r: 1, g: 0.4, b: 0, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Light
-    textColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    textFontStyle: 1
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Gizmo_
-    textColor: {r: 0, g: 1, b: 0, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Manager
-    textColor: {r: 1, g: 0, b: 0, a: 1}
-    textFontStyle: 1
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Panel_
-    textColor: {r: 1, g: 0, b: 1, a: 1}
-    textFontStyle: 1
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Button_
-    textColor: {r: 0, g: 1, b: 1, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Toggle_
-    textColor: {r: 0, g: 1, b: 1, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Model_
-    textColor: {r: 0, g: 1, b: 1, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Text_
-    textColor: {r: 0, g: 1, b: 0, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
-  - targetName: Radio_
-    textColor: {r: 0, g: 1, b: 0, a: 1}
-    textFontStyle: 0
-    backgroundColor: {r: 0.225, g: 0.225, b: 0.225, a: 1}
 --- !u!4 &2016361480
 Transform:
   m_ObjectHideFlags: 0
@@ -1368,15 +1404,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016361481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016361478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b37f4f3c01e5c4fa61d2d570bc47ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filePath: C:\Users\soo50\Documents\ModelTest\\Cat.obj
+--- !u!114 &2016361482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016361478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d351aa3ac590f4b43bbc2b01c6b2d457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera_main: {fileID: 950953655}
+  transform_mainCamera: {fileID: 950953653}
+  object_target: {fileID: 320180758}
+  transform_gizmo: {fileID: 1383769463}
+  obejct_pivot: {fileID: 974101151}
+  rotateSpeed: 7
+  zoomSpeed: 7
+  _isPerfectPanning: 0
+  xPanSpeed: 15
+  yPanSpeed: 10
+  ZOOM_MIN: 30
+  ZOOM_MAX: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2016361480}
-  - {fileID: 1560211016}
   - {fileID: 950953653}
   - {fileID: 291314120}
-  - {fileID: 320180757}
-  - {fileID: 1383769463}
+  - {fileID: 1560211016}
   - {fileID: 1013773753}
   - {fileID: 617849422}
+  - {fileID: 320180757}
+  - {fileID: 1383769463}
+  - {fileID: 974101155}
